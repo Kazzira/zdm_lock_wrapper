@@ -34,6 +34,13 @@ template <typename F>
 struct function_traits;
 
 template <typename R, typename... Args>
+struct function_traits<R ( & )( Args... )>
+{
+        using return_type = R;
+        using arg_types   = std::tuple<Args...>;
+};
+
+template <typename R, typename... Args>
 struct function_traits<R( Args... )>
 {
         using return_type = R;
@@ -70,6 +77,16 @@ concept unary_reference_function = requires {
             0,
             typename zdm::detail::function_traits<AFunction>::arg_types>,
         T &>;
+} || requires {
+    requires std::tuple_size_v<typename zdm::detail::function_traits<
+                 decltype( &AFunction::operator() )>::arg_types>
+                 == 1;
+    requires std::same_as<
+        typename std::tuple_element_t<
+            0,
+            typename zdm::detail::function_traits<
+                decltype( &AFunction::operator() )>::arg_types>,
+        T &>;
 };
 
 template <class AFunction, class T>
@@ -81,6 +98,16 @@ concept unary_const_reference_function = requires {
         typename std::tuple_element_t<
             0,
             typename zdm::detail::function_traits<AFunction>::arg_types>,
+        const T &>;
+} || requires {
+    requires std::tuple_size_v<typename zdm::detail::function_traits<
+                 decltype( &AFunction::operator() )>::arg_types>
+                 == 1;
+    requires std::same_as<
+        typename std::tuple_element_t<
+            0,
+            typename zdm::detail::function_traits<
+                decltype( &AFunction::operator() )>::arg_types>,
         const T &>;
 };
 
@@ -136,7 +163,12 @@ class basic_lock_wrapper
     public:
         basic_lock_wrapper() = default;
 
-        explicit basic_lock_wrapper( AContainedType &&a_contained );
+        explicit basic_lock_wrapper(
+            AContainedType &&a_contained
+        )
+            : m_contained( std::forward<AContainedType>( a_contained ) )
+        {
+        }
 
         AContainedType &
         operator*() noexcept
@@ -224,5 +256,14 @@ class basic_lock_wrapper
         mutable typename mutex_traits<AMutexType>::mutex_type m_mutex;
         AContainedType                                        m_contained;
 };
+
+template <class T>
+using lock_wrapper = basic_lock_wrapper<T, std::mutex>;
+
+template <class T>
+using shared_lock_wrapper = basic_lock_wrapper<T, std::shared_mutex>;
+
+template <class T>
+using recursive_lock_wrapper = basic_lock_wrapper<T, std::recursive_mutex>;
 
 } // namespace zdm

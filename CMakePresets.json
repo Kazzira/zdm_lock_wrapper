@@ -81,7 +81,7 @@
       "cacheVariables": {
         "CMAKE_CXX_FLAGS": {
           "type": "STRING",
-          "value": "-pedantic -pedantic-errors -Wall -Werror -Wextra -Wnrvo -Wconversion --std=c++20"
+          "value": "-pedantic -pedantic-errors -Wall -Werror -Wextra -Wconversion --std=c++20 -fconcepts-diagnostics-depth=5"
         },
         "CMAKE_CXX_FLAGS_RELEASE": {
           "type": "STRING",
@@ -112,36 +112,6 @@
         "CMAKE_EXE_LINKER_FLAGS": {
           "type": "STRING",
           "value": "-fno-sanitize-recover=undefined -fsanitize=address,undefined --coverage"
-        },
-        "CMAKE_EXPORT_COMPILE_COMMANDS": {
-          "type": "BOOL",
-          "value": "ON"
-        },
-        "CMAKE_C_COMPILER": {
-          "type": "STRING",
-          "value": "/usr/bin/gcc"
-        },
-        "CMAKE_CXX_COMPILER": {
-          "type": "STRING",
-          "value": "/usr/bin/g++"
-        }
-      }
-    },
-    {
-      "name": "gcc-test",
-      "hidden": true,
-      "cacheVariables": {
-        "CMAKE_CXX_FLAGS": {
-          "type": "STRING",
-          "value": "-g -fno-sanitize-recover=undefined -fsanitize=address,undefined -pedantic -pedantic-errors -Wall -Werror -Wextra -Wconversion -std=c++20"
-        },
-        "CMAKE_CXX_FLAGS_RELEASE": {
-          "type": "STRING",
-          "value": "-O0"
-        },
-        "CMAKE_EXE_LINKER_FLAGS": {
-          "type": "STRING",
-          "value": "-fno-sanitize-recover=undefined -fsanitize=address,undefined"
         },
         "CMAKE_EXPORT_COMPILE_COMMANDS": {
           "type": "BOOL",
