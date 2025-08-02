@@ -1,0 +1,18 @@
+{
+  "name": "zdm_lock_wrapper",
+  "version-string": "1",
+  "dependencies": [
+  ],
+  "default-features": [
+    "tests"
+  ],
+  "features": {
+    "tests": {
+      "description": "Build tests",
+      "dependencies": [
+        "catch2"
+      ]
+    }
+  },
+  "builtin-baseline": "c591ac6466a55ef0a05a3d56bb1489ca36e50102"
+}

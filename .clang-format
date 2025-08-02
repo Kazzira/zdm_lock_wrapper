@@ -1,0 +1,114 @@
+---
+AccessModifierOffset: 4
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCompound: true
+  AlignFunctionPointers: false
+  PadOperators: true
+AlignArrayOfStructures: Right
+AlignAfterOpenBracket: BlockIndent
+AlignConsecutiveBitFields:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCompound: true
+  AlignFunctionPointers: false
+  PadOperators: true
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCompound: true
+  AlignFunctionPointers: false
+  PadOperators: true
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCompound: true
+  AlignFunctionPointers: false
+  PadOperators: true
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: true
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+Cpp11BracedListStyle: true
+DerivePointerAlignment: true
+CompactNamespaces: true
+ColumnLimit: 80
+BreakTemplateDeclarations: Yes
+BreakAfterAttributes: Always
+BreakArrays: true
+BreakBeforeBinaryOperators: All
+BreakInheritanceList: BeforeComma
+BreakStringLiterals: true
+EmptyLineAfterAccessModifier: Never
+EmptyLineBeforeAccessModifier: Always
+IndentAccessModifiers: true
+AllowBreakBeforeNoexceptSpecifier: Always
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseExpressionOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakBeforeMultilineStrings: true
+BinPackArguments: false
+BraceWrapping:
+  AfterClass: true
+  AfterEnum: true
+  AfterNamespace: false
+  AfterObjCDeclaration: true
+  AfterStruct: true
+  AfterUnion: true
+  AfterExternBlock: true
+  BeforeCatch: true
+  BeforeElse: true
+  BeforeLambdaBody: true
+  BeforeWhile: false
+  IndentBraces: false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+  AfterFunction: true
+  AfterControlStatement: Always
+  AfterCaseLabel: true
+BreakBeforeBraces: Custom
+BracedInitializerIndentWidth: 4
+BreakAdjacentStringLiterals: true
+BreakBeforeConceptDeclarations: Always
+BreakBeforeInlineASMColon: Always
+BreakBeforeTernaryOperators: true
+IndentWidth: 4
+SpaceBeforeParens: Custom
+SpaceBeforeParensOptions:
+  AfterControlStatements: false
+  BeforeNonEmptyParentheses: false
+SpacesInParens: Custom
+SpacesInParensOptions:
+  ExceptDoubleParentheses: true
+  InConditionalStatements: true
+  Other: true
+Standard: Latest
+UseTab: Never
+BreakAfterReturnType: All
+BreakFunctionDefinitionParameters: true
+IndentWrappedFunctionNames: false
+InsertTrailingCommas: None
+BinPackParameters: false
+NamespaceIndentation: Inner
+AlignOperands: AlignAfterOperator
+BreakConstructorInitializers: BeforeComma
+ContinuationIndentWidth: 4
+AlignEscapedNewlines: Right
+IncludeBlocks: Preserve
+InsertBraces: true
+PenaltyBreakBeforeFirstCallParameter: 9999
+IndentCaseLabels: false
+LambdaBodyIndentation: Signature
+Language: Cpp
