@@ -81,13 +81,25 @@ TEST_CASE(
 }
 
 TEST_CASE(
-    "lock_wrapper with std::mutex - const function pointer",
+    "lock_wrapper with std::mutex - const function reference",
     "[lock_wrapper]"
 )
 {
     zdm::lock_wrapper<int> wrapper( 42 );
 
     auto                   result = wrapper.with_lock( get_incremented_value );
+
+    REQUIRE( result == 43 );
+}
+
+TEST_CASE(
+    "lock_wrapper with std::mutex - const function reference",
+    "[lock_wrapper]"
+)
+{
+    zdm::lock_wrapper<int> wrapper( 42 );
+
+    auto                   result = wrapper.with_lock( &get_incremented_value );
 
     REQUIRE( result == 43 );
 }

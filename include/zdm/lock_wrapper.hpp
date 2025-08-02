@@ -41,6 +41,13 @@ struct function_traits<R ( & )( Args... )>
 };
 
 template <typename R, typename... Args>
+struct function_traits<R ( * )( Args... )>
+{
+        using return_type = R;
+        using arg_types   = std::tuple<Args...>;
+};
+
+template <typename R, typename... Args>
 struct function_traits<R( Args... )>
 {
         using return_type = R;
